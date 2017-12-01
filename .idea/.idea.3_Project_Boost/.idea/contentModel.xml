@@ -7,7 +7,6 @@
       <e p="Assembly-CSharp-Editor-firstpass.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
-        <e p="Obstacle.cs" t="Include" />
         <e p="Plugins" t="Include">
           <e p="Editor" t="Include">
             <e p="JetBrains" t="Include">
@@ -15,7 +14,11 @@
             </e>
           </e>
         </e>
-        <e p="Rocket.cs" t="Include" />
+        <e p="Scripts" t="Include">
+          <e p="Obstacle.cs" t="Include" />
+          <e p="Oscillator.cs" t="Include" />
+          <e p="Rocket.cs" t="Include" />
+        </e>
       </e>
       <e p="Library" t="ExcludeRecursive" />
       <e p="obj" t="ExcludeRecursive" />
