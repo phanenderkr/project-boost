@@ -13,6 +13,8 @@ public class Rocket : MonoBehaviour{
 	[SerializeField] private ParticleSystem  mainEngineParticleSystem,deathParticleSystem, 
 	successParticleSystem;
 
+	[SerializeField] private bool collisionsAvailable = true;
+
 	[SerializeField] private float levelLoadDelay = 1f;
 	enum State{
 		Alive,
@@ -34,8 +36,28 @@ public class Rocket : MonoBehaviour{
 			RespondToThrustInput();
 			RespondToRotateInput();
 		}
+		if (Debug.isDebugBuild){
+			DebugKeys();
+		}
+		
 	}
-
+	
+	//---------------------------------------------------------------------------------
+	//-----------------------------------Debug Keys------------------------------------
+	//---------------------------------------------------------------------------------
+	void DebugKeys(){
+		if (Input.GetKeyDown(KeyCode.L)){
+			LoadNextLevel();
+		}else if (Input.GetKeyDown(KeyCode.C)){
+			if (collisionsAvailable){
+				collisionsAvailable = false;
+			} else{
+				collisionsAvailable = true;
+			}
+		}
+	}
+	
+	
 	//---------------------------------------------------------------------------------
 	//--------------------------------Motion------------------------------------------
 	//---------------------------------------------------------------------------------
@@ -103,12 +125,14 @@ public class Rocket : MonoBehaviour{
 	}
 
 	private void StartDeathSequence(){
-		audioSource.Stop();
-		audioSource.PlayOneShot(deathClip);
-		mainEngineParticleSystem.Stop();
-		deathParticleSystem.Play();
-		state = State.Dying;
-		Invoke("LoadFirstLevel", levelLoadDelay);
+		if (collisionsAvailable){
+			audioSource.Stop();
+			audioSource.PlayOneShot(deathClip);
+			mainEngineParticleSystem.Stop();
+			deathParticleSystem.Play();
+			state = State.Dying;
+			Invoke("LoadFirstLevel", levelLoadDelay);
+		}
 	}
 	
 	private void LoadFirstLevel(){
@@ -116,6 +140,13 @@ public class Rocket : MonoBehaviour{
 	}
 
 	private void LoadNextLevel(){
-		SceneManager.LoadScene(1); // todo allow more than 2 levels
+		Scene scene = SceneManager.GetActiveScene();
+		int buildIndex = scene.buildIndex;
+		print(SceneManager.sceneCountInBuildSettings);
+		if (buildIndex < SceneManager.sceneCountInBuildSettings-1){
+			SceneManager.LoadScene(buildIndex + 1);
+		} else{
+			SceneManager.LoadScene(0);
+		} 
 	}
 }

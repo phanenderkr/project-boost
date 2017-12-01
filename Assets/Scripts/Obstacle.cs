@@ -10,7 +10,7 @@ public class Obstacle : MonoBehaviour{
 	// Use this for initialization
 	void Start () {
 		change = gameObject.transform.position;
-		print(change);
+//		print(change);
 	}
 	
 	// Update is called once per frame
@@ -27,6 +27,6 @@ public class Obstacle : MonoBehaviour{
 		}
 		
 		gameObject.transform.position = change;
-		print(change);
+//		print(change);
 	}
 }
