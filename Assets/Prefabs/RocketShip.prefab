@@ -561,14 +561,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 293daa16c9434254e973e9d7d3844fd2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rcsThrust: 100
-  mainThrust: 1000
+  rcsThrust: 350
+  mainThrust: 2000
   mainEngineClip: {fileID: 8300000, guid: c67bfb0385eb5604e9abbee0c7e200e5, type: 3}
   deathClip: {fileID: 8300000, guid: 8c41faee1cd54e44088363828855af3c, type: 3}
   successClip: {fileID: 8300000, guid: abb1e5c0f6537074bbe2484749781841, type: 3}
   mainEngineParticleSystem: {fileID: 198075182394474668}
   deathParticleSystem: {fileID: 198820892984512260}
   successParticleSystem: {fileID: 198914393220085924}
+  levelLoadDelay: 1
 --- !u!135 &135812732449228912
 SphereCollider:
   m_ObjectHideFlags: 1

@@ -96,6 +96,7 @@ public class Rocket : MonoBehaviour{
 	private void StartFinishSquence(){
 		audioSource.Stop();
 		audioSource.PlayOneShot(successClip);
+		mainEngineParticleSystem.Stop();
 		successParticleSystem.Play();
 		state = State.Transcending;
 		Invoke("LoadNextLevel", levelLoadDelay);
@@ -104,6 +105,7 @@ public class Rocket : MonoBehaviour{
 	private void StartDeathSequence(){
 		audioSource.Stop();
 		audioSource.PlayOneShot(deathClip);
+		mainEngineParticleSystem.Stop();
 		deathParticleSystem.Play();
 		state = State.Dying;
 		Invoke("LoadFirstLevel", levelLoadDelay);

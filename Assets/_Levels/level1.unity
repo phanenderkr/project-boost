@@ -37,7 +37,7 @@ RenderSettings:
   m_ReflectionBounces: 1
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
-  m_Sun: {fileID: 0}
+  m_Sun: {fileID: 308517235}
   m_IndirectSpecularColor: {r: 0.4448572, g: 0.49441773, b: 0.5735899, a: 1}
 --- !u!157 &3
 LightmapSettings:
@@ -239,6 +239,11 @@ Transform:
   m_PrefabParentObject: {fileID: 4599811075728882, guid: 387fcd1bb40a23544b0d701c96186085,
     type: 2}
   m_PrefabInternal: {fileID: 238586183}
+--- !u!108 &308517235 stripped
+Light:
+  m_PrefabParentObject: {fileID: 108316807546522376, guid: cb201f96978c05f4cbd1e808fad64e0e,
+    type: 2}
+  m_PrefabInternal: {fileID: 1361432343}
 --- !u!4 &320063239 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4125017299148760, guid: 40e7c3fa041b1bf4fb12035db36fd87e,
@@ -512,8 +517,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementVector: {x: 23, y: 0, z: 0}
-  period: 2
-  movementFactor: 0
+  period: 0
 --- !u!1001 &1107884771
 Prefab:
   m_ObjectHideFlags: 0
@@ -1469,19 +1473,19 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4017430494968402, guid: bab425d4486f20a42bc07e5b92520195, type: 2}
       propertyPath: m_LocalRotation.x
-      value: -0.048281692
+      value: -0.048281696
       objectReference: {fileID: 0}
     - target: {fileID: 4017430494968402, guid: bab425d4486f20a42bc07e5b92520195, type: 2}
       propertyPath: m_LocalRotation.y
-      value: -0.018878918
+      value: -0.01887892
       objectReference: {fileID: 0}
     - target: {fileID: 4017430494968402, guid: bab425d4486f20a42bc07e5b92520195, type: 2}
       propertyPath: m_LocalRotation.z
-      value: 0.0009119053
+      value: 0.0009119054
       objectReference: {fileID: 0}
     - target: {fileID: 4017430494968402, guid: bab425d4486f20a42bc07e5b92520195, type: 2}
       propertyPath: m_LocalRotation.w
-      value: -0.9986549
+      value: -0.99865496
       objectReference: {fileID: 0}
     - target: {fileID: 4017430494968402, guid: bab425d4486f20a42bc07e5b92520195, type: 2}
       propertyPath: m_RootOrder
